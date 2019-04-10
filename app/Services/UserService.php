@@ -201,6 +201,8 @@ class UserService
             if (isset($trackableData[$field]) && !empty($trackableData[$field])) {
                 // $information['id'] = $dataBeforeUpdated['id'];
                 // $information['entity_type'] = $class;
+                $information['entity_type'] = $class;
+                $information['entity_id'] = $dataBeforeUpdated['id'];
                 $information['user_id'] = $dataBeforeUpdated['id'];
                 $information['field_name'] = $field;
                 $information['old_value'] = $dataBeforeUpdated[$field];

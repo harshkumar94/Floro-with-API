@@ -20,3 +20,7 @@ Route::resource('users', 'UserController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/export/users', 'ExportUserController@exportUsers')->name('usersExport');
+Route::get('/download/users', 'ExportUserController@showUsersDownload')->name('showUsersDownload');
+Route::get('/download/users-file', 'ExportUserController@downloadUsers')->name('usersDownload');

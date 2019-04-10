@@ -15,6 +15,8 @@ class CreateUserActivitiesTable extends Migration
     {
         Schema::create('user_activities', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('entity_type')->comment('polymorphic relations (models, i.e. users table)');
+            $table->integer('entity_id')->comment('entity model reference id.');
             $table->integer('user_id');
             $table->string('field_name');
             $table->string('old_value');

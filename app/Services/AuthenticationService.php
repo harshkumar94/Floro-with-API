@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Repositories\AuthenticationLogRepository;
 use App\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AuthenticationService
 {
@@ -32,7 +33,7 @@ class AuthenticationService
      * @return void
      */
     public function storeLoginActivityOfUser(Request $request, User $user)
-    {
+    { 
         
         $logDetails = [
             'user_id' => $user->id,
