@@ -30,7 +30,7 @@ class ExportUserController extends Controller
     public function exportUsers()
     {
         $this->exportUserService->processUserExport();
-
+        
         return redirect('/users')->with('successMessage',
             __('frontendMessages.SUCCESS_MESSAGES.USERS_EXPORTED'));
     }

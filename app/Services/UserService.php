@@ -60,6 +60,7 @@ class UserService
 
         $password = $inputData['password'];
         $inputData['password'] = Hash::make($inputData['password']);
+        $inputData['is_active'] = 1;
 
         $user = $this->userRepository->create($inputData);
 
@@ -139,7 +140,7 @@ class UserService
             return false;
         }
 
-        return $this->userRepository->update($id, ['is_active' => self::IN_ACTIVE]);
+        return $this->userRepository->delete($id, ['is_active' => self::IN_ACTIVE]);
     }
 
     /**

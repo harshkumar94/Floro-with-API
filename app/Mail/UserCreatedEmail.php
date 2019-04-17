@@ -47,12 +47,12 @@ class UserCreatedEmail extends Mailable implements ShouldQueue
      *
      * @return $this
      */
-    // public function build()
-    // {
-    //     $data['senderUser'] = $this->senderUser;
-    //     $data['receiverUser'] = $this->receiverUser;
-    //     $data['additionalInformation'] = $this->additionalInformation;
+    public function build()
+    {
+        $data['senderUser'] = $this->senderUser;
+        $data['receiverUser'] = $this->receiverUser;
+        $data['additionalInformation'] = $this->additionalInformation;
 
-    //     return $this->view('emails.userCreated')->with($data);
-    // }
+        return $this->view('emails.userCreated')->with($data);
+    }
 }

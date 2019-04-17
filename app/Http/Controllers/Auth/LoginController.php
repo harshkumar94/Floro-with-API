@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
+
+
 class LoginController extends Controller
 {
     /*
@@ -30,6 +32,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/users';
+    public $successStatus = 200;
 
     /**
      * Create a new controller instance.
@@ -45,6 +48,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validateLogin($request);
+        
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
